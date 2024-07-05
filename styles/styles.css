@@ -1,0 +1,394 @@
+/* FONTES */
+
+@font-face {
+    font-family: texto_navegacao;
+    src: url(fonts/roboto/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: texto_curriculo;
+    src: url(fonts/roboto/Roboto-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: texto_assinatura;
+    src: url(fonts/roboto/Roboto-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: texto_titulo;
+    src: url(fonts/DM_Serif_Text/DMSerifText-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: texto_conteudo;
+    src: url(fonts/Lora/Lora-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: texto_destacado;
+    src: url(fonts/Lora/Lora-MediumItalic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: texto_form;
+    src: url(fonts/DM_Serif_Text/DMSerifText-Regular.ttf) format('truetype');
+}
+
+/* ANIMAÇÃO */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/* ANIMAÇÃO */
+
+/* LIMPA NAVEGADOR */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* NOVO - Adiciona box-sizing para todos os elementos */
+}
+
+/* INDEX */
+
+body {
+    background-color: rgb(30, 30, 30);
+    display: flex; /* NOVO - Define o body como um contêiner flexível */
+    height: 100vh; /* NOVO - Garante que o body ocupe a altura total da visualização */
+    overflow: hidden; /* NOVO - Impede a rolagem */
+}
+
+header {
+    background-color: rgb(30, 30, 30);    
+    height: 100vh;
+    width: 15vw;
+    position: relative; /* Define a posição como relativa para que possamos posicionar os elementos filhos relativamente a isso */
+    text-align: center; /* Centraliza o conteúdo horizontalmente dentro do container */
+    z-index: 100; /* Valor alto para garantir que o header esteja acima */
+}
+
+.navegacao {
+    font-family: texto_navegacao;
+    font-size: 1.4vw; /* Tamanho da fonte relativo à largura do viewport */
+    text-align: center;
+    position: absolute;
+    top: 15%; /* Define a distância do topo do container */
+    left: 0%;
+    right: 0%;
+}
+
+.navegacao ul {
+    list-style-type: none; /* Remove os marcadores de lista */
+}
+
+.navegacao li {
+    margin-bottom: 0.7vw; /* Margem inferior relativa ao viewport */
+}
+
+.navegacao a {
+    background: linear-gradient(to right, rgb(255, 255, 255) 50%, #FF5858 50%, #2e2ecc);
+    background-size: 202%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.5s ease-out;
+}
+
+/* Estilo para links ativos */
+.navegacao a.active {
+    background-position: -100%;
+}
+
+/* Estilo para links ao passar o mouse */
+.navegacao a:hover {
+    background-position: -100%;
+}
+
+.conteudo-base {
+    position: absolute; /* Define a posição como absoluta */
+    width: 100%; /* Garante que o conteúdo ocupe toda a largura do container */
+    bottom: 8vh; /* Margem inferior relativa ao viewport */
+}
+
+.assinatura {
+    font-size: 0.8vw;
+    font-family: texto_assinatura;
+    color: rgb(255, 255, 255);
+}
+
+.icones ul {
+    margin-top: 1.2vw; /* Margem superior relativa ao viewport */
+    list-style-type: none;
+}
+
+.icones ul li {
+    display: inline-block; /* Elementos dispostos lado a lado */
+    margin: 0 1vw; /* Margem lateral relativa ao viewport */
+}
+
+.icones img {
+    width: 1.25vw; /* Tamanho dos ícones relativo ao viewport */
+    height: 1.25vw;
+}
+
+main {
+    top: 14%;
+    background-color: rgb(217, 217, 217);
+    position: relative;
+    overflow-y: auto; /* NOVO - Adiciona rolagem vertical caso o conteúdo seja maior que a área disponível */
+    width: 80%; /* Largura do bloco */
+    height: 82%;
+    max-width: 80%; /* Largura máxima */
+    border-radius: 4vh;
+}
+
+.titulo {
+    width: 22vw; /* Usando vw para largura relativa à largura da viewport */
+    height: 8vh; /* Usando vh para altura relativa à altura da viewport */
+    background-color: rgb(30, 30, 30);
+    position: fixed;
+    z-index: 50;
+    border-radius: 4vh;
+    top: 3vh;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    /* padding: 1vh; */
+}
+
+.caixa-texto {
+    animation-name: slideIn;
+    animation-duration: 1.5s;
+    display: inline-block;
+    padding: 0.08vh 2vw; /* Usando vh e vw para padding */
+    border-radius: 4vh; /* Usando vh para manter a proporção de arredondamento */
+    background-color: #FF5858; /* Cor de fundo para destacar a caixa */
+}
+
+.texto {
+    font-family: texto_titulo; /* Atualize a fonte conforme necessário */
+    font-size: 4.5vh; /* Usando vh para o tamanho da fonte */
+    color: rgb(30, 30, 30);
+    margin: 0; /* Remove a margem padrão do h1 */
+}
+
+/* HOME */
+
+.home {
+    position: relative;
+    top: 3vw;
+    left: 4vw;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    line-height: 1.3;
+    width: 80%; /* Largura do bloco */
+    max-width: 100%; /* Largura máxima */
+}
+
+.home h2 {
+    position: relative;
+    font-family: texto_titulo;
+    font-size: 3vw;
+    width: 42vw;
+}
+
+.home p {
+    position: relative;
+    font-family: texto_conteudo;
+    font-size: 1.5vw;
+    margin-top: 2vw;
+    text-align: justify;
+    width: 42vw;
+}
+
+.nome {
+    color: #2e2ecc;
+}
+
+.destaque {
+    font-family: texto_destacado;
+}
+
+/* BIOGRAFIA */
+
+.biografia {
+    display: flex;
+    position: relative;
+    top: 3vw;
+    left: 4vw;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    line-height: 1.3;
+    width: 73vw;
+}
+
+/* IMAGEM */
+
+.image-container {
+    position: relative;
+    width: 22vw;
+    height: 25vw;
+    overflow: hidden; /* Esconde a parte da imagem que ultrapassar o contêiner */
+    border-radius: 4vh;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+}
+
+/* TEXTO IMAGEM */
+
+.texto-imagem {
+    margin-top: 1vw;
+    border-radius: 4vh;
+    height: 7vw;
+    background-color: #6c6ce3;
+    
+    position: relative;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: center; /* Opcional: centraliza o texto se houver necessidade */
+
+    padding-top: 1.6vw;
+}
+
+.texto-imagem h1 {
+    font-family: texto_titulo;
+    font-size: 1.7vw;
+}
+
+.texto-imagem p {
+    font-family: texto_conteudo;
+    font-size: 1.1vw;
+}
+
+/* CURRICULO */
+
+.biografia {
+    line-height: 1.3;
+}
+
+.curriculo h1 {
+    margin-bottom: 15px;
+    font-family: texto_navegacao;
+    font-size: 20px;
+}
+
+.curriculo p {
+    margin-bottom: 15px;
+    font-family: texto_assinatura;
+    font-size: 20px;
+}
+
+.ano {
+    margin-right: 30px;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+    animation-name: fadeIn;
+    animation-duration: 2.5s;
+    top: 3vw;
+    width: 100vw;
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 3vw 1vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+    grid-gap: 20px;
+}
+
+.portfolio div {
+    border-radius: 4vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio div:nth-child(7n+1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.portfolio div img {
+    border-radius: 4vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.portfolio div:hover img {
+    transform: scale(1.1);
+}
+
+/* CONTATO */
+
+.contato {
+    position: relative;
+    width: 40vw;
+    right: 1vw;
+    top: 2vw;
+    margin: 0 auto;
+    animation-name: fadeIn;
+    animation-duration: 2.5s;
+    line-height: 1.8;
+}
+
+/* CUSTOM SCROLLBAR / BARRA ROLAGEM */
+
+::-webkit-scrollbar {
+    width: 1.75vw;
+}
+
+::-webkit-scrollbar-track {
+    /* background: #FF5858; */
+    border-radius: 4vh;
+    margin-block: 1.5vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF5858;;
+    border-radius: 4vh;
+    border: 0.5vw solid rgb(219, 219, 219);
+}
+
+.agradecimento {
+    position: absolute;
+    top: 12vw;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    line-height: 1.3;
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center; /* Opcional: centraliza o texto se houver necessidade */
+}
+
+.agradecimento h1 {
+    font-family: texto_titulo;
+    font-size: 3vw;
+}
+
+.agradecimento p {
+    font-family: texto_conteudo;
+    font-size: 1.5vw;
+}
