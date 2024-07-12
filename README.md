@@ -1,1 +1,3 @@
 Projeto completo de portfolio realizado originalmente através do framework Django em Python, com API para envio de formulários e email para contato e com banco de dados simples SQLite3. Porém, essa versão pública é uma versão adaptada da versão original, mais simples e em hardcode, com o formulário retirado por questões de segurança pois para rodar no GHithub Pages, algumas infos ficariam expostas
+
+Essa versão possui sérios problemas de responsividade com dispositivos mobile e diferentes tamanhos de tela, uma versão nova e final deste projeto está sendo produzida, visando ser responsivo em qualquer aparelho e com funcionalidades extras!
